@@ -66,7 +66,7 @@ shinyUI(fluidPage(
 
   p(a("full rules: thesis committee", href="http://gist.io/9012377")),
   p(a("full rules: preliminary oral exam committee", href="http://gist.io/9012395")),
-  p(a("blog post about this project", href="http://alyssafrazee.com/web-apps.html")),
+  p(a("blog post about this project", href="http://alyssafrazee.com/committee-checker-2.html")),
   p("disclaimer: this isn't endorsed by JHSPH (it was just a fun side project), so please double check your committee with your academic coordinator before you take your exam.")  
   
 ))
