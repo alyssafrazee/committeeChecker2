@@ -213,8 +213,7 @@ shinyServer(function(input, output){
     textInput("advisor", 'name', "[advisor]"),
     selectInput("advisorRank", 'rank', c("assistant","associate","full","scientist","adjunct")),
     textInput("advisorDept", 'department', myDept()),
-    checkboxInput("advisorSPH", 'SPH?', TRUE),
-    textInput("advisorjoint",'joint appointment', "none"))
+    checkboxInput("advisorSPH", 'SPH?', TRUE))
   })
 
   output$memberColumn2 <- renderUI({
@@ -223,8 +222,7 @@ shinyServer(function(input, output){
       selectInput(paste0("member",2,"rank"), 'rank', c("assistant","associate","full","scientist","adjunct")),
       textInput(paste0("member", 2, 'dept'), 'department', ''),
       checkboxInput(paste0("member", 2, 'SPH'), 'SPH?', FALSE),
-      checkboxInput("member2co", "co-advisor", FALSE),
-      textInput(paste0("member",2,'joint'), 'joint appointment', "none"))
+      checkboxInput("member2co", "co-advisor", FALSE))
   })
   
   output$memberColumn3 <- renderUI({
@@ -233,8 +231,7 @@ shinyServer(function(input, output){
       selectInput(paste0("member",3,"rank"), 'rank', c("assistant","associate","full","scientist","adjunct")),
       textInput(paste0("member", 3, 'dept'), 'department', ''),
       checkboxInput(paste0("member", 3, 'SPH'), 'SPH?', FALSE),
-      checkboxInput("member3co", "co-advisor", FALSE),
-      textInput(paste0("member",3,'joint'), 'joint appointment', "none"))
+      checkboxInput("member3co", "co-advisor", FALSE))
   })
   
   
@@ -244,8 +241,7 @@ shinyServer(function(input, output){
         selectInput(paste0("member",4,"rank"), 'rank', c("assistant","associate","full","scientist","adjunct")),
         textInput(paste0("member", 4, 'dept'), 'department', ''),
         checkboxInput(paste0("member", 4, 'SPH'), 'SPH?', FALSE),
-        checkboxInput("member4co", "co-advisor", FALSE),
-        textInput(paste0("member",4,'joint'), 'joint appointment', "none"))
+        checkboxInput("member4co", "co-advisor", FALSE))
       })
 
   output$memberColumn5 <- renderUI({
@@ -254,8 +250,7 @@ shinyServer(function(input, output){
       selectInput(paste0("member",5,"rank"), 'rank', c("assistant","associate","full","scientist","adjunct")),
       textInput(paste0("member", 5, 'dept'), 'department', ''),
       checkboxInput(paste0("member", 5, 'SPH'), 'SPH?', FALSE),
-      checkboxInput("member5co", "co-advisor", FALSE),
-      textInput(paste0("member",5,'joint'), 'joint appointment', "none"))
+      checkboxInput("member5co", "co-advisor", FALSE))
   })
   
 
@@ -265,8 +260,7 @@ shinyServer(function(input, output){
       selectInput(paste0("alt",1,"rank"), 'rank', c("assistant","associate","full","scientist","adjunct")),
       textInput(paste0("alt", 1, 'dept'), 'department', myDept()),
       checkboxInput(paste0("alt", 1, 'SPH'), 'SPH?', FALSE),
-      checkboxInput("alt1co", "co-advisor", FALSE),
-      textInput(paste0("alt",1,'joint'), 'joint appointment', "none"))
+      checkboxInput("alt1co", "co-advisor", FALSE))
   })
   
   output$alt2Column <- renderUI({
@@ -275,8 +269,7 @@ shinyServer(function(input, output){
       selectInput(paste0("alt",2,"rank"), 'rank', c("assistant","associate","full","scientist","adjunct")),
       textInput(paste0("alt", 2, 'dept'), 'department', ''),
       checkboxInput(paste0("alt", 2, 'SPH'), 'SPH?', FALSE),
-      checkboxInput("alt2co", "co-advisor", FALSE),
-      textInput(paste0("alt",2,'joint'), 'joint appointment', "none"))
+      checkboxInput("alt2co", "co-advisor", FALSE))
   })
   
   output$result = renderText({
