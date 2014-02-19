@@ -162,10 +162,10 @@ shinyServer(function(input, output){
         return(paste0("NOPE: choose another alternate. With this setup, ", irrep, ' cannot be replaced by an alternate. Failure messages from replacing ',irrep,' with each alternate in turn: ', paste(results_if_replaced[[first_fail]], collapse="; ")))
       }
       
-      # if committee is OK just missing 1 person, try it missing 2 people at a time (i.e., using both alternates)
+      # if committee is OK just missing 1 person, try it missing 2 people at a time (i.e., using both alternates) -- only for prelims
+      if(input$type=='preliminary oral'){
       double_sick_res = data.frame(sickie1='x', sickie2='x', res='AWESOME! Valid committee!',stringsAsFactors=FALSE)
       sick_combos = combn(memmax-1, 2)+1
-      print(sick_combos)
       for(i in 1:ncol(sick_combos)){
           sc = sick_combos[,i]
           eval(parse(text=paste0('sickie1 = m',sc[1])))
@@ -197,6 +197,7 @@ shinyServer(function(input, output){
       if(any(double_sick_res$res != 'AWESOME! Valid committee!')){
         irrepInd = which(double_sick_res$res != 'AWESOME! Valid committee!')[1]
         return(paste0("NOPE: choose at least one different alternate. With this setup, if both ", double_sick_res$sickie1[irrepInd],' and ', double_sick_res$sickie2[irrepInd], ' are sick, you have this problem: ', substr(double_sick_res$res[irrepInd], 7, nchar(double_sick_res$res[irrepInd]))))
+      }
       }
       
       return("AWESOME! Valid committee!")
